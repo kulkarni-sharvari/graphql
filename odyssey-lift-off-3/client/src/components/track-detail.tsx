@@ -19,6 +19,7 @@ import MarkDown from './md-content';
  * It provides access to the first module of the track.
  */
 const TrackDetail: React.FC<{track: any}> = ({track}) => {
+  console.log(track)
   const {
     title,
     description,
@@ -60,7 +61,7 @@ const TrackDetail: React.FC<{track: any}> = ({track}) => {
           </DetailItem>
           <div>
             {/* Need to comment this out until Link is placed within a Router */}
-            {/* <StyledLink to={`./module/${modules[0]['id']}`}> */}
+            <StyledLink to={`./module/${modules[0]['id']}`}>
               <Button
                 icon={<IconRun width="20px" />}
                 color={colors.pink.base}
@@ -68,18 +69,18 @@ const TrackDetail: React.FC<{track: any}> = ({track}) => {
               >
                 Start Track
               </Button>
-            {/* </StyledLink> */}
+            </StyledLink>
           </div>
         </DetailRow>
         <ModuleListContainer>
           <DetailItem>
             <h4>Modules</h4>
             <ul>
-              {modules.map((module: any) => (
-                <li key={module.title}>
-                  <div>{module.title}</div>
+              {modules.map((m: any) => (
+                <li key={m.title}>
+                  <div>{m.title}</div>
                   <ModuleLength>
-                    {humanReadableTimeFromSeconds(module.length ?? 0)}
+                    {humanReadableTimeFromSeconds(m.length ?? 0)}
                   </ModuleLength>
                 </li>
               ))}

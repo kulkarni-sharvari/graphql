@@ -4,7 +4,7 @@ export const typeDefs = gql`
   type Query {
     "Get tracks array for homepage grid"
     tracksForHome: [Track!]!
-    tracks (id: ID!): Track
+    trackById (id: ID!): Track
   }
 
   "A track is a group of Modules that teaches about a specific topic"
@@ -24,14 +24,14 @@ export const typeDefs = gql`
 
     numberofViews: Int
 
-    module:[Module!]!
+    modules:[Module!]!
   }
 
   type Module {
     id: ID!
     "The module's title"
     title: String!
-    "Length of module
+    "Length of module"
     length: Int
   }
 
