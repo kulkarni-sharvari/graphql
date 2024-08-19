@@ -18,12 +18,12 @@ import MarkDown from './md-content';
  * author, length, number of views, modules list, among other things.
  * It provides access to the first module of the track.
  */
-const TrackDetail: React.FC<{track: any}> = ({track}) => {
+const TrackDetail: React.FC<{ track: any }> = ({ track }) => {
   const {
     title,
     description,
     thumbnail,
-    author = { photo: '', name: ''},
+    author = { photo: '', name: '' },
     length,
     modulesCount,
     modules = [],
